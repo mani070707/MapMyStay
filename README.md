@@ -114,7 +114,7 @@ sequenceDiagram
     participant EJS
     User->>Express: GET /listings/:id
     Express->>Controller: showListing()
-    Controller->>MongoDB: Find listing; populate owner, reviews, review authors
+    Controller->>MongoDB: Find listing and populate related records
     MongoDB-->>Controller: Hydrated listing document
     Controller->>EJS: Render listings/show.ejs
     EJS-->>User: HTML listing page
